@@ -1,15 +1,31 @@
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('songSubmissionForm');
     const tableBody = document.querySelector('#myTable tbody');
+    const deleteFile = document.getElementById('delete-file');
+
 
     // Load saved songs from localStorage when the page loads
     loadSongsFromStorage();
+    deleteFile.style.display = 'none'; 
+
 
     // Event listener for the file name display
     document.getElementById('sheetMusic').addEventListener('change', function(e) {
         const fileName = e.target.files[0].name;
         document.getElementById('sheetMusicFileName').textContent = fileName;
+        deleteFile.style.display = 'inline'
     });
+
+    deleteFile.addEventListener('click', function() {
+        const fileInput = document.getElementById('sheetMusic');
+        fileInput.value = "";
+        document.getElementById('sheetMusicFileName').textContent = '';
+    
+        deleteFile.style.display = 'none'; 
+    
+    });
+
+
 
     // Event listener for form submission
     form.addEventListener('submit', function(e) {
@@ -67,7 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Clear the form
             form.reset();
-            document.getElementById('sheetMusicFileName').textContent = ''; // Clear file name display
+            document.getElementById('sheetMusicFileName').textContent = '';
+            deleteFile.style.display = 'none'; 
+            // Clear file name display
         })
         .catch(error => console.error('Error:', error));
     });
