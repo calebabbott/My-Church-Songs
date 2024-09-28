@@ -1,5 +1,5 @@
 # Song Library Manager
-This project is a simple web-based Song Library Manager that allows users to upload song data including the song name, artist, sheet music file, BPM, and a YouTube link. The application stores song entries locally in the browser's localStorage and dynamically displays them in a table. It also includes functionalities like searching, sorting by BPM, and deleting individual song entries.
+I made this for my church so they have a way to store stongs for organization. This project is a simple web-based Song Library Manager that allows users to upload song data including the song name, artist, sheet music file, BPM, and a YouTube link. The application stores song entries locally in the browser's localStorage and dynamically displays them in a table. It also includes functionalities like searching, sorting by BPM, and deleting individual song entries.
 
 # Features
 - **Add Songs:** Users can add a new song to the table by providing the song name, artist, BPM, YouTube link, and uploading a sheet music file.
